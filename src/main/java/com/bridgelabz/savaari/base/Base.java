@@ -10,8 +10,10 @@ import com.bridgelabz.savaari.utility.Email;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import java.io.IOException;
 import java.net.URL;
@@ -23,9 +25,16 @@ public class Base {
 
     //method to launch browser
     @BeforeTest
-    public static void setUp() {
-        WebDriverManager.chromedriver().setup();
-        webdriver = new ChromeDriver();
+    @Parameters("browserName")
+    public static void setUp(String browserName) {
+        if(browserName.equals("chrome")){
+            WebDriverManager.chromedriver().setup();
+            webdriver = new ChromeDriver();
+        }
+        else if (browserName.equals("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            webdriver = new FirefoxDriver();
+        }
         webdriver.manage().window().maximize();
         webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         try {
