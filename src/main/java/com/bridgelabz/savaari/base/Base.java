@@ -6,6 +6,7 @@
 
 package com.bridgelabz.savaari.base;
 
+import com.bridgelabz.savaari.utility.Email;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -45,6 +46,7 @@ public class Base {
         @AfterTest
         public void tearDown() {
             webdriver.close();
+            Email.sendEmail();
         }
 
 }
