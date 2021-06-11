@@ -9,6 +9,7 @@ package com.bridgelabz.savaari.base;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
@@ -40,10 +41,10 @@ public class Base {
         }
     }
 
-//        //method to close the session open by driver
-//        @AfterTest
-//        public void tearDown() {
-//            webdriver.close();
-//        }
+        //method to close the session open by driver
+        @AfterTest
+        public void tearDown() {
+            webdriver.close();
+        }
 
 }
