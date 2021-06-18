@@ -39,6 +39,7 @@ public class Email {
         // This will handle the complete authentication
         Session session = Session.getDefaultInstance(props,
 
+
                 new javax.mail.Authenticator() {
 
                     protected PasswordAuthentication getPasswordAuthentication() {
@@ -65,7 +66,7 @@ public class Email {
             BodyPart messageBodyPart1 = new MimeBodyPart();
 
             // Set the body of email
-            messageBodyPart1.setText("Dear Sir,\n\nPlease find the attachment for extent report for BookswagonAutomationProject.\n\nYour Sincerely,\nSamiksha Shende");
+            messageBodyPart1.setText("Dear Sir,\n\nPlease find the attachment for extent report for SavaariAutomationProject.\n\nYour Sincerely,\nSamiksha Shende");
 
             // Create another object to add another content
             MimeBodyPart messageBodyPart2 = new MimeBodyPart();
@@ -73,7 +74,7 @@ public class Email {
             // Mention the file which you want to send
             String filename = "ExtentReportResults.html";
 
-            File att = new File(new File("C:\\Users\\kalam\\IdeaProjects\\BookswagonAutomationProgram\\src\\main\\resources\\ExtentReport"), filename);
+            File att = new File(new File("C:\\Users\\kalam\\IdeaProjects\\SavaariAutomation\\src\\main\\resources\\ExtentReport"), filename);
             messageBodyPart2.attachFile(att);
 
             // set the file

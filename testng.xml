@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true"
           name="C:/Users/kalam/IdeaProjects/SavaariAutomation/src/test/java/com/bridgelabz/savaari/test/SavaariTest.java">
-        <parameter name="browserName" value="firefox"></parameter>
+        <parameter name="browserName" value="chrome"></parameter>
         <classes>
             <class name="com.bridgelabz.savaari.test.SavaariTest">
                 <methods>
@@ -12,4 +12,7 @@
             </class>
         </classes>
     </test>
+    <listeners>
+        <listener class-name="com.bridgelabz.savaari.utility.TestNgListener"></listener>
+    </listeners>
 </suite>
